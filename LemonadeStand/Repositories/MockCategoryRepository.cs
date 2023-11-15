@@ -1,3 +1,5 @@
+using LemonadeStand.Models;
+
 public class MockCategoryRepository : ICategoryRepository
 {
     public IEnumerable<Category> AllCategories => 

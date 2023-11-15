@@ -1,3 +1,4 @@
+using LemonadeStand.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 public class BeverageController: Controller
@@ -13,7 +14,7 @@ public class BeverageController: Controller
 
     public IActionResult List()
     {
-        ViewBag.CurrentCategory = "Lemony";
-        return View(_beverageRepository.AllBeverages);
+        BeverageListViewModel beverageListViewModel = new BeverageListViewModel(_beverageRepository.AllBeverages, "Lemony");
+        return View(beverageListViewModel);
     }
 }

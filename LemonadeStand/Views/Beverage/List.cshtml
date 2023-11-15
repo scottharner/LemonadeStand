@@ -1,4 +1,5 @@
-@model IEnumerable<Beverage>
+@using LemonadeStand.ViewModels;
+@model BeverageListViewModel
 
 <!DOCTYPE html>
 
@@ -8,8 +9,8 @@
         <title>Logan's Lemonade Stand</title>
     </head>
     <body>
-        <h1>@ViewBag.CurrentCategory</h1>
-        @foreach (var beverage in Model)
+        <h1>@Model.CurrentCategory</h1>
+        @foreach (var beverage in Model.Beverages)
         {
             <div>
                 <h2>@beverage.Name</h2>

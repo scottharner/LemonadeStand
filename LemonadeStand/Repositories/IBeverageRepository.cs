@@ -1,3 +1,5 @@
+using LemonadeStand.Models;
+
 public interface IBeverageRepository
 {
     IEnumerable<Beverage> AllBeverages { get; }

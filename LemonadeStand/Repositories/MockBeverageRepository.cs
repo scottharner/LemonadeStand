@@ -1,3 +1,5 @@
+using LemonadeStand.Models;
+
 public class MockBeverageRepository : IBeverageRepository
 {
     private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
