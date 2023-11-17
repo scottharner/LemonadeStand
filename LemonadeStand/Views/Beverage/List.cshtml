@@ -1,22 +1,11 @@
-@using LemonadeStand.ViewModels;
 @model BeverageListViewModel
 
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta name="viewport" content="width-device-width" />
-        <title>Logan's Lemonade Stand</title>
-    </head>
-    <body>
-        <h1>@Model.CurrentCategory</h1>
-        @foreach (var beverage in Model.Beverages)
-        {
-            <div>
-                <h2>@beverage.Name</h2>
-                <h3>@beverage.Price.ToString("c")</h3>
-                <h4>@beverage.Category.Name</h4>
-            </div>
-        }
-    </body>
-</html>
+<h1>@Model.CurrentCategory</h1>
+@foreach (var beverage in Model.Beverages)
+{
+    <div>
+        <h2>@beverage.Name</h2>
+        <h3>@beverage.Price.ToString("c")</h3>
+        <h4>@beverage.Category.Name</h4>
+    </div>
+}
