@@ -1,11 +1,26 @@
 @model BeverageListViewModel
 
 <h1>@Model.CurrentCategory</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
 @foreach (var beverage in Model.Beverages)
 {
-    <div>
-        <h2>@beverage.Name</h2>
-        <h3>@beverage.Price.ToString("c")</h3>
-        <h4>@beverage.Category.Name</h4>
+    <div class="col">
+        <div class="card pie-card">
+            <img src="@beverage.ImageThumbnailUrl" class="card-img-top" alt="@beverage.Name">
+            <div class="card-body pie-button">
+                <h4 class="d-grid">
+                </h4>
+
+                <div class="d-flex justify-content-between mt-2">
+                    <h2 class="text-start">
+                        <a class="pie-link">@beverage.Name</a>
+                    </h2>
+                    <h5 class="text-nowrap">
+                        @beverage.Price.ToString("c")
+                    </h5>
+                </div>
+            </div>
+        </div>
     </div>
 }
+</div>
