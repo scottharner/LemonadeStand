@@ -14,7 +14,18 @@ public class BeverageController: Controller
 
     public IActionResult List()
     {
-        BeverageListViewModel beverageListViewModel = new BeverageListViewModel(_beverageRepository.AllBeverages, "Lemony");
+        BeverageListViewModel beverageListViewModel = new BeverageListViewModel(_beverageRepository.AllBeverages, "All beverages");
         return View(beverageListViewModel);
+    }
+
+    public IActionResult Details(int id)
+    {
+        var beverage = _beverageRepository.GetBeverageById(id);
+        if (beverage == null)
+        {
+            return NotFound();
+        }
+
+        return View(beverage);
     }
 }
